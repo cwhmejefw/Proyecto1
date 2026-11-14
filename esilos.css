@@ -4,15 +4,11 @@
     --fondo: #f4acb7;
     --borde: #efcfe3;
 }
-     
-
 
 .contenedor {
-display: flex;
-flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
-
-
 
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -21,24 +17,26 @@ body {
     padding: 0;
 }
 
-/* === PASO 2: Esto va justo debajo === */
-/* 11. Menú de navegación */
+/* === PASO 2: Menú de navegación === */
 .menu ul {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 1.5rem;
-list-style: none;
-padding: 0;
-margin: 0 0 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
 }
+
 .menu a {
-color: var(--fondo);
-text-decoration: none;
-font-weight: 600;
+    color: var(--fondo);
+    text-decoration: none;
+    font-weight: 600;
 }
 
-
+.menu a:hover {
+    text-decoration: underline;
+}
 
 .cabecera {
     background-color: var(--primario);
@@ -47,68 +45,77 @@ font-weight: 600;
     text-align: center;
 }
 
+/* === PASO 3: Tarjetas === */
 .tarjeta {
     max-width: 640px;
-    margin: 40px auto;    /* Centra la tarjeta en la pantalla */  
+    margin: 40px auto;
     padding: 32px;
     background-color: white;
     border: 1px solid var(--borde);
     border-radius: 16px;
-    text-align: center; /* <--Centra el texto y la foto  dentro de la tarjeta*/
-    
+    text-align: center;
+    box-sizing: border-box;
 }
+
 .centrado {
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-/* 12. Servicios */
+/* === PASO 4: Habilidades === */
 .fila {
-display: flex;
-flex-wrap: wrap;
-gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
+
 .mini-tarjeta {
-flex: 1 1 180px;
-padding: 1.25rem;
-background-color: var(--fondo);
-border-radius: 12px;
+    flex: 1 1 180px;
+    padding: 1.25rem;
+    background-color: var(--fondo);
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
+
 .mini-tarjeta h3 {
-margin-top: 0;
+    margin-top: 0;
 }
 
+.mini-tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(216, 128, 223, 0.12);
+}
+
+/* === PASO 5: Fotografía === */
 .foto {
-  width: 190px;
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border: 5px solid var(--borde);
+    border-radius: 8px;
+    padding: 4px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
 
-  height: 190px;
-
-  object-fit: cover;
-
-  border: 5px solid var(--borde);
-
-  border-radius: 8px;
-
-  padding: 4px;
-
-  /* Transición de la fotografía */
-
-  transition: transform 0.3s ease;
+.foto:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(157, 129, 137, 0.35);
 }
 
 .tarjeta h2 {
-  margin-top: 16px;
-  color: var(--primario);
+    margin-top: 16px;
+    color: var(--primario);
 }
 
+/* === PASO 6: Pie de página === */
 .pie {
-  padding: 24px;
-  text-align: center;
+    padding: 24px;
+    text-align: center;
 }
 
-
+/* === PASO 7: Enlaces y botones === */
 .menu-tarjeta {
     margin-top: 20px;
 }
@@ -123,6 +130,17 @@ margin-top: 0;
     text-decoration: underline;
 }
 
+.boton {
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+/* === PASO 8: Formación === */
 .tabla-formacion {
     width: 100%;
     border-collapse: separate;
@@ -142,152 +160,173 @@ margin-top: 0;
     text-align: center;
 }
 
-
+/* === PASO 9: Lista de habilidades === */
 .lista-habilidades {
-display: flex;
-flex-wrap: wrap;
-gap: 0.85rem;
-list-style: none;
-padding: 0;
-
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    list-style: none;
+    padding: 0;
 }
+
 .lista-habilidades li {
-padding: 0.5rem 1rem;
-background-color: var(--fondo);
-border: 1px solid var(--borde);
-border-radius: 999px;
+    padding: 0.5rem 1rem;
+    background-color: var(--fondo);
+    border: 1px solid var(--borde);
+    border-radius: 999px;
 }
 
-/* 13. Transiciones y efectos */
-.boton {
-transition: transform 0.2s ease, opacity 0.2s ease;
-}
-.boton:hover {
-transform: translateY(-2px);
-}
-.mini-tarjeta {
-transition: transform 0.4s ease, box-shadow 0.3s ease;
-}
-.mini-tarjeta:hover {
-transform: translateY(-6px);
-box-shadow: 0 10px 24px rgba(216, 128, 223, 0.12);
-}
-.menu a:hover { text-decoration: underline; }
-
-.proyecto {
-position: relative;
-}
-.etiqueta {
-position: absolute;
-top: 0.75rem;
-right: 0.75rem;
-padding: 0.25rem 0.75rem;
-background-color: var(--acento);
-color: white;
-border-radius: 500px;
-font-size: 0.875rem;
-
-}
-
-/* 14. Proyectos */
+/* === PASO 10: Proyectos === */
 .galeria {
-display: grid;
-grid-template-columns: 1fr;
-gap: 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
 }
+
 .proyecto {
-background-color: var(--fondo);
-border-radius: 12px;
-overflow: hidden;
+    position: relative;
+    background-color: var(--fondo);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .proyecto img {
-display: block;
-width: 100%;
-height: 160px;
-object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
+
+.proyecto img:hover {
+    transform: scale(1.06);
+}
+
 .proyecto h3,
 .proyecto p {
-padding: 0 1rem;
+    padding: 0 1rem;
+}
+
+.etiqueta {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--primario);
+    color: white;
+    border-radius: 500px;
+    font-size: 0.875rem;
+}
+
+/* === PASO 11: Contacto === */
+#contacto {
+    text-align: center;
 }
 
 .formulario {
-  display: flex;
-
-  flex-direction: column;
-
-  text-align: center;
-
-  gap: 10px;
-
-  margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+    margin: 25px auto 0;
+    text-align: left;
 }
 
 .formulario label {
-  font-weight: bold;
-
-  margin-top: 8px;
+    color: var(--primario);
+    font-weight: 600;
+    margin-top: 5px;
 }
 
 .formulario input,
 .formulario textarea {
-  width: 100%;
-
-  padding: 12px;
-
-  border: 2px solid var(--borde);
-
-  border-radius: 8px;
-
-  background-color: var(--fondo);
-
-  color: var(--texto);
-
-  font-family: inherit;
-
-  text-align: center;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    background-color: #fff9fb;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.formulario input::placeholder,
-.formulario textarea::placeholder {
-  color: #c6d9cc;
+.formulario input:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: var(--primario);
+    box-shadow: 0 0 8px rgba(157, 129, 137, 0.25);
 }
 
-.formulario button {
-  align-self: center;
+.formulario textarea {
+    resize: vertical;
 }
 
+.formulario .boton {
+    background-color: var(--primario);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-/* 16. Botón volver arriba */
-html { scroll-behavior: smooth; }
+.formulario .boton:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+/* === PASO 12: Volver arriba === */
+html {
+    scroll-behavior: smooth;
+}
+
 .volver-arriba {
-position: fixed;
-right: 1.25rem;
-bottom: 1.25rem;
-width: 3rem;
-height: 3rem;
-display: grid;
-place-items: center;
-background-color: var(--primario);
-color: #f4acb7;
-border-radius: 50%;
-text-decoration: none;
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    width: 3rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    background-color: var(--primario);
+    color: #f4acb7;
+    border-radius: 50%;
+    text-decoration: none;
 }
 
-
-/* 17. Diseño responsive */
+/* === PASO 13: Diseño responsive === */
 @media (min-width: 600px) {
-.galeria { grid-template-columns: repeat(2, 1fr); }
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
 @media (min-width: 900px) {
-.galeria { grid-template-columns: repeat(3, 1fr); }
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
+
 @media (max-width: 599px) {
-h1 { font-size: 2rem; }
-.cabecera { padding: 2rem 1rem; }
-.tarjeta { padding: 1.25rem; }
-.menu ul { gap: 0.75rem 1rem; }
+    h1 {
+        font-size: 2rem;
+    }
+
+    .cabecera {
+        padding: 2rem 1rem;
+    }
+
+    .tarjeta {
+        padding: 1.25rem;
+        margin: 20px 12px;
+    }
+
+    .menu ul {
+        gap: 0.75rem 1rem;
+    }
 }
-
-
