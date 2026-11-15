@@ -1,200 +1,156 @@
-/* === PASO 1: Esto va al principio === */
+
+/* === COLORES PRINCIPALES === */
+
 :root {
     --primario: #9d8189;
     --fondo: #f4acb7;
     --borde: #efcfe3;
 }
-.contenedor {
-display: flex;
-flex-direction: row;
+
+/* === CONFIGURACIÓN GENERAL === */
+
+* {
+    box-sizing: border-box;
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: var(--fondo);
     margin: 0;
     padding: 0;
+    color: #51464a;
 }
 
-/* === PASO 2: Esto va justo debajo === */
-/* 11. Menú de navegación */
-.menu ul {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 1.5rem;
-list-style: none;
-padding: 0;
-margin: 0 0 2rem;
-}
-.menu a {
-color: var(--fondo);
-text-decoration: none;
-font-weight: 600;
-}
-
-
+/* === CABECERA === */
 
 .cabecera {
     background-color: var(--primario);
-    color: var(--fondo);
-    padding: 48px 24px;
+    color: white;
+    padding: 35px 20px;
     text-align: center;
 }
 
+.cabecera h1 {
+    margin-top: 25px;
+    font-size: 32px;
+}
+
+.cabecera h2 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* === MENÚ SUPERIOR === */
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 11px 18px;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: var(--fondo);
+    color: var(--primario);
+    transform: translateY(-3px);
+}
+
+/* === TARJETAS PRINCIPALES === */
+
 .tarjeta {
-    max-width: 640px;
-    margin: 40px auto;    /* Centra la tarjeta en la pantalla */  
+    max-width: 1000px;
+    width: calc(100% - 40px);
+    margin: 35px auto;
     padding: 32px;
     background-color: white;
     border: 1px solid var(--borde);
     border-radius: 16px;
-    text-align: center; /* <--Centra el texto y la foto  dentro de la tarjeta*/
-    
-}
-.centrado {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-
-/* 12. Servicios */
-.fila {
-display: flex;
-flex-wrap: wrap;
-gap: 1rem;
-}
-.mini-tarjeta {
-flex: 1 1 180px;
-padding: 1.25rem;
-background-color: var(--fondo);
-border-radius: 12px;
-}
-.mini-tarjeta h3 {
-margin-top: 0;
-}
-.foto {
-  width: 250px;
-  height: 248px;
-  border-radius: 50%;
-  border: 4px solid var(--primario);
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(157, 129, 137, 0.08);
 }
 
 .tarjeta h2 {
-  margin-top: 16px;
-  color: var(--primario);
-}
-
-.pie {
-  padding: 24px;
-  text-align: center;
-}
-
-
-.menu-tarjeta {
-    margin-top: 20px;
-}
-
-.tarjeta a {
     color: var(--primario);
-    text-decoration: none;
-    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
-
-.tarjeta a:hover {
-    text-decoration: underline;
-}
-
-.tabla-formacion {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin: 20px auto;
-    text-align: center;
-    border: 3px solid #efcfe3;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.tabla-formacion th,
-.tabla-formacion td {
-    border-right: 1px solid #efcfe3;
-    border-bottom: 2px solid #f4acb7;
-    padding: 10px;
-    text-align: center;
-}
-
-
-.lista-habilidades {
-display: flex;
-flex-wrap: wrap;
-gap: 0.85rem;
-list-style: none;
-padding: 0;
-
-}
-.lista-habilidades li {
-padding: 0.5rem 1rem;
-background-color: var(--fondo);
-border: 1px solid var(--borde);
-border-radius: 999px;
-}
-
-/* 13. Transiciones y efectos */
-.boton {
-transition: transform 0.2s ease, opacity 0.2s ease;
-}
-.boton:hover {
-transform: translateY(-2px);
-}
-.mini-tarjeta {
-transition: transform 0.4s ease, box-shadow 0.3s ease;
-}
-.mini-tarjeta:hover {
-transform: translateY(-6px);
-box-shadow: 0 10px 24px rgba(216, 128, 223, 0.12);
-}
-.menu a:hover { text-decoration: underline; }
-
 
 /* === PRESENTACIÓN PERSONAL === */
 
 .presentacion {
-    max-width: 900px;
+    max-width: 1000px;
 }
 
 .presentacion-contenido {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 35px;
+    gap: 40px;
     text-align: left;
+}
+
+.foto {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primario);
 }
 
 .info-principal {
     flex: 1;
 }
 
+.etiqueta-presentacion {
+    color: var(--primario);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
 .info-principal h2 {
-    font-size: 30px;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
 .info-principal h2 span {
     color: var(--primario);
 }
 
-.info-principal p {
-    line-height: 1.7;
+.info-principal h3 {
+    font-size: 18px;
 }
+
+.info-principal p {
+    line-height: 1.8;
+}
+
+/* === BOTONES DE PRESENTACIÓN === */
 
 .botones-presentacion {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .boton {
@@ -202,8 +158,18 @@ box-shadow: 0 10px 24px rgba(216, 128, 223, 0.12);
     background-color: var(--primario);
     color: white !important;
     padding: 12px 22px;
+    border: none;
     border-radius: 25px;
     text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #82666f;
+    transform: translateY(-3px);
 }
 
 .boton-secundario {
@@ -211,42 +177,145 @@ box-shadow: 0 10px 24px rgba(216, 128, 223, 0.12);
     color: var(--primario) !important;
 }
 
-/* === PROYECTOS === */
+/* === FILAS Y MINI TARJETAS === */
 
-.galeria {
+.fila {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 18px;
+}
+
+.mini-tarjeta {
+    flex: 1 1 200px;
+    padding: 22px;
+    background-color: #fff0f3;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.mini-tarjeta h3 {
+    margin-top: 0;
+    color: var(--primario);
+}
+
+.mini-tarjeta p {
+    line-height: 1.6;
+}
+
+.mini-tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(157, 129, 137, 0.15);
+}
+
+/* === PROYECTOS === */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .proyecto {
-    flex: 1 1 200px;
-    background-color: #fff5f7;
-    border-radius: 12px;
     padding: 15px;
+    background-color: #fff0f3;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.proyecto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(157, 129, 137, 0.15);
 }
 
 .proyecto img {
     width: 100%;
+    height: 180px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-/* === FORMULARIO === */
+.proyecto h3 {
+    color: var(--primario);
+}
+
+/* === FORMACIÓN === */
+
+.tabla-formacion {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid var(--borde);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tabla-formacion th,
+.tabla-formacion td {
+    padding: 14px 10px;
+    border-right: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+}
+
+.tabla-formacion th {
+    background-color: var(--primario);
+    color: white;
+}
+
+.tabla-formacion tr:last-child td {
+    border-bottom: none;
+}
+
+/* === CONTACTO === */
 
 .formulario {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    max-width: 600px;
+    margin: 25px auto 0;
     text-align: left;
+}
+
+.formulario label {
+    color: var(--primario);
+    font-weight: bold;
 }
 
 .formulario input,
 .formulario textarea {
-    padding: 12px;
+    width: 100%;
+    padding: 13px;
     border: 1px solid var(--borde);
-    border-radius: 8px;
+    border-radius: 9px;
     font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    background-color: #fffafd;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: var(--primario);
+    box-shadow: 0 0 5px rgba(157, 129, 137, 0.2);
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.formulario button {
+    align-self: flex-start;
+}
+
+/* === ENLACES === */
+
+.tarjeta a {
+    text-decoration: none;
 }
 
 /* === VOLVER ARRIBA === */
@@ -255,38 +324,77 @@ box-shadow: 0 10px 24px rgba(216, 128, 223, 0.12);
     position: fixed;
     bottom: 20px;
     right: 20px;
+    z-index: 10;
     background-color: var(--primario);
     color: white !important;
     padding: 12px 16px;
     border-radius: 50%;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.volver-arriba:hover {
+    background-color: #82666f;
+    transform: translateY(-4px);
+}
+
+/* === PIE DE PÁGINA === */
+
+.pie {
+    background-color: var(--primario);
+    color: white;
+    padding: 24px;
+    text-align: center;
 }
 
 /* === ADAPTACIÓN A CELULARES === */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+
+    .cabecera {
+        padding: 25px 12px;
+    }
+
+    .cabecera h1 {
+        font-size: 25px;
+    }
+
+    .menu ul {
+        gap: 8px;
+    }
+
+    .menu a {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    .tarjeta {
+        width: calc(100% - 24px);
+        margin: 20px auto;
+        padding: 20px;
+    }
 
     .presentacion-contenido {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
 
     .foto {
-        width: 180px;
-        height: 180px;
+        width: 190px;
+        height: 190px;
     }
 
-    .tarjeta {
-        margin: 20px 12px;
-        padding: 20px;
+    .info-principal h2 {
+        font-size: 26px;
     }
 
-    .menu ul {
-        gap: 12px;
+    .galeria {
+        grid-template-columns: 1fr;
     }
 
-    .menu a {
-        font-size: 14px;
+    .proyecto img {
+        height: 200px;
     }
 
     .botones-presentacion {
@@ -296,4 +404,14 @@ box-shadow: 0 10px 24px rgba(216, 128, 223, 0.12);
     .tabla-formacion {
         font-size: 12px;
     }
+
+    .tabla-formacion th,
+    .tabla-formacion td {
+        padding: 8px 4px;
+    }
+
+    .mini-tarjeta {
+        flex: 1 1 100%;
+    }
 }
+
