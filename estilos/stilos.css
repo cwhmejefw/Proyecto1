@@ -516,3 +516,93 @@ img {
     transform: translateY(-4px);
     box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
+/* === PRESENTACIÓN PERSONAL === */
+.presentacion {
+    max-width: 900px;
+    text-align: left;
+}
+
+.presentacion-contenido {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.presentacion-contenido .foto {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.info-principal {
+    flex: 1;
+}
+
+.info-principal h2 {
+    margin-top: 0;
+}
+
+.info-principal p {
+    line-height: 1.6;
+}
+
+/* === BOTONES DE PRESENTACIÓN === */
+.botones-presentacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.botones-presentacion .boton {
+    background-color: var(--primario);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.botones-presentacion .boton:hover {
+    background-color: #c17b98;
+}
+
+/* === MENÚ EN BLOQUES === */
+.menu a {
+    display: block;
+    padding: 10px 16px;
+    background-color: white;
+    color: var(--primario);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #c17b98;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* === ADAPTACIÓN PARA CELULARES === */
+@media (max-width: 600px) {
+    .presentacion-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .presentacion-contenido .foto {
+        width: 180px;
+        height: 180px;
+    }
+
+    .tarjeta {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+
+    .menu ul {
+        gap: 8px;
+    }
+}
