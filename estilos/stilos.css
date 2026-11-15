@@ -158,3 +158,142 @@ transform: translateY(-6px);
 box-shadow: 0 10px 24px rgba(216, 128, 223, 0.12);
 }
 .menu a:hover { text-decoration: underline; }
+
+
+/* === PRESENTACIÓN PERSONAL === */
+
+.presentacion {
+    max-width: 900px;
+}
+
+.presentacion-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    text-align: left;
+}
+
+.info-principal {
+    flex: 1;
+}
+
+.info-principal h2 {
+    font-size: 30px;
+}
+
+.info-principal h2 span {
+    color: var(--primario);
+}
+
+.info-principal p {
+    line-height: 1.7;
+}
+
+.botones-presentacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.boton {
+    display: inline-block;
+    background-color: var(--primario);
+    color: white !important;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.boton-secundario {
+    background-color: var(--fondo);
+    color: var(--primario) !important;
+}
+
+/* === PROYECTOS === */
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.proyecto {
+    flex: 1 1 200px;
+    background-color: #fff5f7;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.proyecto img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* === FORMULARIO === */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.formulario input,
+.formulario textarea {
+    padding: 12px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+/* === VOLVER ARRIBA === */
+
+.volver-arriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primario);
+    color: white !important;
+    padding: 12px 16px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* === ADAPTACIÓN A CELULARES === */
+
+@media (max-width: 600px) {
+
+    .presentacion-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto {
+        width: 180px;
+        height: 180px;
+    }
+
+    .tarjeta {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+
+    .menu ul {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .botones-presentacion {
+        flex-wrap: wrap;
+    }
+
+    .tabla-formacion {
+        font-size: 12px;
+    }
+}
