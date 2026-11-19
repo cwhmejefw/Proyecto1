@@ -95,7 +95,18 @@ body {
 }
 
 /* === PRESENTACIÓN PERSONAL === */
+/* === EFECTO BRILLO EN LAS IMÁGENES === */
+.foto,
+.proyecto img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
 
+.foto:hover,
+.proyecto img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+}
 .presentacion {
     max-width: 1000px;
 }
